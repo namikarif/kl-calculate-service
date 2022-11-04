@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "kl-calculate": {
+      "projectType": "library",
+      "root": "projects/kl-calculate",
+      "sourceRoot": "projects/kl-calculate/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/kl-calculate/tsconfig.lib.json",
+            "project": "projects/kl-calculate/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/kl-calculate/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/kl-calculate/src/test.ts",
+            "tsConfig": "projects/kl-calculate/tsconfig.spec.json",
+            "karmaConfig": "projects/kl-calculate/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/kl-calculate/tsconfig.lib.json",
+              "projects/kl-calculate/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "kl-calculate"
 }
