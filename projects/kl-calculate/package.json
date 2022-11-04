@@ -1,6 +1,9 @@
 {
   "name": "kl-calculate",
-  "version": "1.0.1",
+  "version": "1.0.4",
+  "homepage": "www.kalemyazilim.com",
+  "repository": "https://github.com/namikarif/kl-calculate-service",
+  "author": "Namık Arifoğlu",
   "peerDependencies": {
     "@angular/common": "^11.0.9",
     "@angular/core": "^11.0.9"

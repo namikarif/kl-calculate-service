@@ -1,24 +1,29 @@
 # KlCalculate
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.9.
+Calculate billing document
 
-## Code scaffolding
+## Installing
 
-Run `ng generate component component-name --project kl-calculate` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project kl-calculate`.
-> Note: Don't forget to add `--project kl-calculate` or else it will be added to the default project in your `angular.json` file. 
+```
+$ npm install kl-calculate --save
+```
 
-## Build
+## Example
+### Import Module
 
-Run `ng build kl-calculate` to build the project. The build artifacts will be stored in the `dist/` directory.
+```js
+import { KlCalculateModule } from 'kl-calculate';
 
-## Publishing
+imports: [ KlCalculateModule ]
+```
 
-After building your library with `ng build kl-calculate`, go to the dist folder `cd dist/kl-calculate` and run `npm publish`.
+### Usage in Component
+```js
+import { KlCalculateService } from 'kl-calculate';
 
-## Running unit tests
 
-Run `ng test kl-calculate` to execute the unit tests via [Karma](https://karma-runner.github.io).
+constructor(private klCalculateService: KlCalculateService) {}
 
-## Further help
+this.klCalculateService.calculateAndPost(access_token, workingPeriodId, api_url, data);
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
